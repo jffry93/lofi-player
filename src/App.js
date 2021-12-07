@@ -50,7 +50,9 @@ function App() {
       <h1>Music Player</h1>
       <Song currentSong={currentSong} />
       <Player
+        songs={songs}
         currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         audioRef={audioRef}

@@ -7,7 +7,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const Player = ({
+  songs,
   currentSong,
+  setCurrentSong,
   isPlaying,
   setIsPlaying,
   audioRef,
@@ -24,6 +26,25 @@ const Player = ({
       audioRef.current.play();
       setIsPlaying(!isPlaying);
     }
+  };
+
+  //Skip and reverse to track Event Handler
+  const skipTrackHandler = async (direction) => {
+    //goes to state holding playlist object and determines where in the array current song is
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    //console.log(currentIndex);
+    if (direction === 'skip-forward') {
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    }
+    if (direction === 'skip-back') {
+      if ((currentIndex - 1) % songs.length === -1) {
+        await setCurrentSong(songs[songs.length - 1]);
+        if (isPlaying) audioRef.current.play();
+        return;
+      }
+      await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+    }
+    if (isPlaying) audioRef.current.play();
   };
 
   //The function is used to convert the duration value into time
@@ -70,7 +91,12 @@ const Player = ({
         <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
       </div>
       <div className='play-control'>
-        <FontAwesomeIcon className='skip-left' icon={faAngleLeft} size='2x' />
+        <FontAwesomeIcon
+          onClick={() => skipTrackHandler('skip-back')}
+          className='skip-left'
+          icon={faAngleLeft}
+          size='2x'
+        />
         <FontAwesomeIcon
           onClick={playSongHandler}
           className='play'
@@ -78,6 +104,7 @@ const Player = ({
           size='2x'
         />
         <FontAwesomeIcon
+          onClick={() => skipTrackHandler('skip-forward')}
           className='skip-forward'
           icon={faAngleRight}
           size='2x'
