@@ -37,14 +37,27 @@ const Player = ({
   //Must add onChange handler to avoid input error
   //When there is a change made to the audio bar input tag the songInfo state updates the currentTime
   const dragHandler = (e) => {
+    //gets currentTime from audio tag in App.js
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
+
+  //ADD STYLE FOR INPUT
+
+  const trackAnim = {
+    transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
+
   return (
     <div className='player'>
       <div className='time-control'>
         <p>{getTime(songInfo.currentTime)}</p>
-        <div className='track'>
+        <div
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+          className='track'
+        >
           <input
             min={0}
             max={songInfo.duration || 0}
@@ -52,7 +65,7 @@ const Player = ({
             type='range'
             onChange={dragHandler}
           />
-          <div className='animate-track'></div>
+          <div style={trackAnim} className='animate-track'></div>
         </div>
         <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
       </div>
