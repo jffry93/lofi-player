@@ -34,14 +34,17 @@ const Player = ({
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     //console.log(currentIndex);
     if (direction === 'skip-forward') {
-      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]); //If index reaches song.length it makes value 0
     }
     if (direction === 'skip-back') {
+      //check to see if the index is negative
       if ((currentIndex - 1) % songs.length === -1) {
+        //if index is -1 set index to last index
         await setCurrentSong(songs[songs.length - 1]);
         if (isPlaying) audioRef.current.play();
         return;
       }
+      //If index is Not -1 then subtract 1
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
     }
     if (isPlaying) audioRef.current.play();

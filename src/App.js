@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 //COMPONENTS
 import Song from './components/Song';
 import Player from './components/Player';
+import Nav from './components/Nav';
 //STYLING
 import './styles/app.scss';
 
@@ -24,6 +25,8 @@ function App() {
     duration: 0,
     animationPercentage: 0,
   });
+  //Determines if Library should be open or not
+  const [libraryStatus, setLibraryStatus] = useState(false);
 
   //EVENT HANDLER
   //Adds values to setSongInfo state
@@ -47,7 +50,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Music Player</h1>
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
         songs={songs}
