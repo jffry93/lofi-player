@@ -8,7 +8,7 @@
   box-shadow: 2px 2px 50px rgb(60, 60, 60);
   overflow: scroll;
   transform: translateX(-100%);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   opacity: 0;
 
   h2 {
@@ -30,7 +30,7 @@
   }
   &:hover {
     background: rgba($color: #1e1e1e, $alpha: 1);
-    transition: background 0.5s ease;
+    transition: background 03s ease;
   }
 }
 .song-description {

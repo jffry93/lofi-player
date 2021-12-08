@@ -23,9 +23,11 @@
   }
   .song-container {
     background-color: rgba(24, 24, 24, 1);
+    transition: all 0.4s ease-in;
   }
   .player {
     background-color: rgba(24, 24, 24, 1);
+    transition: all 0.4s ease-in;
     .time-control {
       p {
         color: rgba(179, 179, 179, 0.8);
@@ -37,11 +39,14 @@
   }
   .library {
     background-color: rgba(18, 18, 18, 1);
+    //transition: all 0.4s ease-in;
     .library-songs {
       background-color: rgba(40, 40, 40, 1);
+      transition: all 0.4s ease-in;
     }
     .selected {
       background-color: rgba(24, 24, 24, 1);
+      transition: all 0.4s ease-in;
     }
   }
 
