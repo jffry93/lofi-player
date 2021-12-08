@@ -8,6 +8,7 @@ import {
 
 const Player = ({
   songs,
+  setSongs,
   currentSong,
   setCurrentSong,
   isPlaying,
@@ -16,6 +17,24 @@ const Player = ({
   songInfo,
   setSongInfo,
 }) => {
+  //FUNCTION TO AVOID USING USEEFFECT
+  const activeLibraryHandler = (nextPrev) => {
+    const newSongs = songs.map((song) => {
+      if (song.id === nextPrev.id) {
+        return {
+          ...song,
+          active: true,
+        };
+      } else {
+        return {
+          ...song,
+          active: false,
+        };
+      }
+    });
+    setSongs(newSongs);
+  };
+
   //Event Handlers
   //This function is used to Play currentSong selected
   const playSongHandler = () => {
@@ -35,17 +54,20 @@ const Player = ({
     //console.log(currentIndex);
     if (direction === 'skip-forward') {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length]); //If index reaches song.length it makes value 0
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
     }
     if (direction === 'skip-back') {
       //check to see if the index is negative
       if ((currentIndex - 1) % songs.length === -1) {
         //if index is -1 set index to last index
         await setCurrentSong(songs[songs.length - 1]);
+        activeLibraryHandler(songs[songs.length - 1]);
         if (isPlaying) audioRef.current.play();
         return;
       }
       //If index is Not -1 then subtract 1
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+      activeLibraryHandler(songs[songs.length - 1]);
     }
     if (isPlaying) audioRef.current.play();
   };

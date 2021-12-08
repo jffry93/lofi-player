@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import Song from './components/Song';
 import Player from './components/Player';
 import Nav from './components/Nav';
+import Library from './components/Library';
 //STYLING
 import './styles/app.scss';
 
@@ -49,11 +50,13 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className={`App ${libraryStatus ? 'library-active' : ''}`}>
+      {/* Navbar is to the left. When library Status state becomes true it move the library to the center and goes back when false*/}
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
         songs={songs}
+        setSongs={setSongs}
         currentSong={currentSong}
         setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
@@ -61,6 +64,14 @@ function App() {
         audioRef={audioRef}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
+      />{' '}
+      <Library
+        audioRef={audioRef}
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+        isPlaying={isPlaying}
+        setSongs={setSongs}
+        libraryStatus={libraryStatus}
       />
       <audio
         ref={audioRef}
