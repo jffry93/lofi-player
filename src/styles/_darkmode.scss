@@ -1,0 +1,55 @@
+//dark-mode button styling
+.dark-mode-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+  opacity: 0.7;
+}
+
+.dark-mode-active {
+  background-color: rgba(24, 24, 24, 1);
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  nav {
+    background-color: rgba(18, 18, 18, 1);
+    button {
+      color: rgba(179, 179, 179, 0.8);
+      border: 2px solid rgba(179, 179, 179, 0.8);
+    }
+  }
+  .song-container {
+    background-color: rgba(24, 24, 24, 1);
+  }
+  .player {
+    background-color: rgba(24, 24, 24, 1);
+    .time-control {
+      p {
+        color: rgba(179, 179, 179, 0.8);
+      }
+    }
+    .play-control {
+      color: rgba(179, 179, 179, 0.8);
+    }
+  }
+  .library {
+    background-color: rgba(18, 18, 18, 1);
+    .library-songs {
+      background-color: rgba(40, 40, 40, 1);
+    }
+    .selected {
+      background-color: rgba(24, 24, 24, 1);
+    }
+  }
+
+  .dark-mode-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    opacity: 0.7;
+    color: rgba(179, 179, 179, 0.8);
+  }
+}

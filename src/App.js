@@ -81,7 +81,6 @@ function App() {
         songInfo={songInfo}
         setSongInfo={setSongInfo}
       />
-      <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
       <Library
         audioRef={audioRef}
         songs={songs}
@@ -90,6 +89,7 @@ function App() {
         setSongs={setSongs}
         libraryStatus={libraryStatus}
       />
+      <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
       <audio
         ref={audioRef}
         src={currentSong.audio}

@@ -12,8 +12,9 @@
   opacity: 0;
 
   h2 {
-    min-height: 10vh;
-    padding-left: 2rem;
+    min-height: 100px;
+    height: 10vh;
+    padding-left: 3rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -47,8 +48,8 @@
   scrollbar-color: rgba(155, 155, 155, 0.5);
 }
 *::-webkit-scrollbar {
-  width: 5px;
-  //height: 100%;
+  // width: 5px;
+  // height: 100%;
 }
 *::-webkit-scrollbar-track {
   background: transparent;

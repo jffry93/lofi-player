@@ -1,7 +1,9 @@
 nav {
-  min-height: 10vh;
+  min-height: 100px;
+  height: 10vh;
+  padding: 0 3rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   button {
     background: transparent;

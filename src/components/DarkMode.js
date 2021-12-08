@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+//FONT AWESOME STYLING
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const DarkMode = ({ darkMode, setDarkMode }) => {
   //On Component load the localStorage adds darkMode state as value
@@ -37,8 +40,13 @@ const DarkMode = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <div>
-      <button onClick={() => updateStorage()}>DarkMode</button>
+    <div className='dark-mode-container'>
+      <FontAwesomeIcon
+        onClick={() => updateStorage()}
+        className='play'
+        icon={darkMode ? faMoon : faSun}
+        size='2x'
+      />
     </div>
   );
 };
