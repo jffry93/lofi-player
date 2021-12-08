@@ -5,7 +5,7 @@ const LibrarySong = ({
   id, //song.id
   setCurrentSong, //song currently selected
   audioRef, //audio tag of song playing
-  isPlaying,
+  isPlaying, //if song is playing
 }) => {
   //Event Handler
   //makes song clicked in the library the current song

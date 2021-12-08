@@ -4,6 +4,7 @@ import Song from './components/Song';
 import Player from './components/Player';
 import Nav from './components/Nav';
 import Library from './components/Library';
+import DarkMode from './components/DarkMode';
 //STYLING
 import './styles/app.scss';
 
@@ -11,7 +12,7 @@ import './styles/app.scss';
 import lofiPlaylist from './lofiPlaylist';
 
 function App() {
-  //Ref
+  //useRef() Hook
   const audioRef = useRef(undefined);
   //STATE
   //This State is used to hold playlist data
@@ -28,7 +29,8 @@ function App() {
   });
   //Determines if Library should be open or not
   const [libraryStatus, setLibraryStatus] = useState(false);
-
+  //DarkMode toggle
+  const [darkMode, setDarkMode] = useState();
   //EVENT HANDLER
   //Adds values to setSongInfo state
   const timeUpdateHandler = (e) => {
@@ -48,11 +50,25 @@ function App() {
       animationPercentage: animation,
     });
   };
+  //Starts next song when the song ends
+  const songEndHandler = async (e) => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    if (isPlaying) audioRef.current.play();
+  };
 
   return (
-    <div className={`App ${libraryStatus ? 'library-active' : ''}`}>
+    <div
+      className={`App ${libraryStatus ? 'library-active' : ''}
+    ${darkMode ? 'dark-mode-active' : ''}`}
+    >
       {/* Navbar is to the left. When library Status state becomes true it move the library to the center and goes back when false*/}
-      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+      <Nav
+        libraryStatus={libraryStatus}
+        setLibraryStatus={setLibraryStatus}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
       <Song currentSong={currentSong} />
       <Player
         songs={songs}
@@ -64,7 +80,8 @@ function App() {
         audioRef={audioRef}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
-      />{' '}
+      />
+      <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
       <Library
         audioRef={audioRef}
         songs={songs}
@@ -77,6 +94,8 @@ function App() {
         ref={audioRef}
         src={currentSong.audio}
         onTimeUpdate={timeUpdateHandler}
+        onLoadedMetadata={timeUpdateHandler}
+        onEnded={songEndHandler}
       ></audio>
     </div>
   );
