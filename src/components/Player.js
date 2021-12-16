@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
+
+//FONT AWESOME
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlay,
   faAngleLeft,
   faAngleRight,
   faPause,
+  faVolumeOff,
+  faVolumeUp,
 } from '@fortawesome/free-solid-svg-icons';
 
 const Player = ({
@@ -16,7 +21,13 @@ const Player = ({
   audioRef,
   songInfo,
   setSongInfo,
+  volumeLvl,
+  setVolumeLvl,
 }) => {
+  useEffect(() => {
+    audioRef.current.volume = volumeLvl;
+  }, []);
+
   //FUNCTION TO AVOID USING USEEFFECT
   const activeLibraryHandler = (nextPrev) => {
     const newSongs = songs.map((song) => {
@@ -88,10 +99,19 @@ const Player = ({
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
 
-  //ADD STYLE FOR INPUT
+  //Adjust Volume handler
+  const volumeHandler = (e) => {
+    audioRef.current.volume = e.target.value / 10;
+    setVolumeLvl(audioRef.current.volume);
+  };
 
+  //ADD ANIMATION STYLE FOR SONG TIME INPUT
   const trackAnim = {
     transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
+  //ADD ANIMATION STYLE FOR VOLUME
+  const volumeAnim = {
+    transform: `translateX(${volumeLvl * 100}%)`,
   };
 
   return (
@@ -114,6 +134,33 @@ const Player = ({
           <div style={trackAnim} className='animate-track'></div>
         </div>
         <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
+      </div>
+      <div className='volume-control'>
+        <div>
+          <FontAwesomeIcon
+            onClick={() => skipTrackHandler('skip-forward')}
+            className='skip-forward'
+            size='2x'
+            icon={faVolumeOff}
+          />
+        </div>
+        <div
+          className='track'
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+        >
+          <input min={0} max={10} type='range' onChange={volumeHandler} />
+          <div style={volumeAnim} className='animate-track'></div>
+        </div>
+        <div>
+          <FontAwesomeIcon
+            onClick={() => skipTrackHandler('skip-forward')}
+            className='skip-forward'
+            size='2x'
+            icon={faVolumeUp}
+          />
+        </div>
       </div>
       <div className='play-control'>
         <FontAwesomeIcon

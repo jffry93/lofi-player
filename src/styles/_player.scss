@@ -18,6 +18,23 @@
     padding: 1rem;
   }
 }
+.volume-control {
+  display: flex;
+
+  width: 45vw;
+  justify-content: space-between;
+  input {
+    width: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+}
 
 .play-control {
   display: flex;

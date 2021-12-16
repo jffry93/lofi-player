@@ -31,6 +31,9 @@ function App() {
   const [libraryStatus, setLibraryStatus] = useState(false);
   //DarkMode toggle
   const [darkMode, setDarkMode] = useState();
+  //Volume
+  const [volumeLvl, setVolumeLvl] = useState(0.3);
+
   //EVENT HANDLER
   //Adds values to setSongInfo state
   const timeUpdateHandler = (e) => {
@@ -80,6 +83,8 @@ function App() {
         audioRef={audioRef}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
+        volumeLvl={volumeLvl}
+        setVolumeLvl={setVolumeLvl}
       />
       <Library
         audioRef={audioRef}
