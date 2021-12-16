@@ -8,7 +8,7 @@ function lofiPlaylist() {
       cover:
         'https://chillhop.com/wp-content/uploads/2021/04/cb0cc6270d7f2e1bb13e44e8832bd5c9b2a61080-300x300.jpg',
       id: uuidv4(),
-      active: false,
+      active: true,
       color: ['#d35b2b', '#554b50'],
       audio: 'https://mp3.chillhop.com/serve.php/?mp3=17087',
     },
@@ -58,7 +58,7 @@ function lofiPlaylist() {
       cover:
         'https://chillhop.com/wp-content/uploads/2021/08/b0bb2309d0c8fe0a32907ecddab689501b7de5cf-300x300.jpg',
       id: uuidv4(),
-      active: true,
+      active: false,
       color: ['#434E61', '#7DA7E8'],
       audio: 'https://mp3.chillhop.com/serve.php/?mp3=24642',
     },
