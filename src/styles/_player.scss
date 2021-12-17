@@ -31,11 +31,14 @@
     background: transparent;
     cursor: pointer;
   }
+  .volume-down {
+    margin: 0 4px 0;
+  }
   div {
     display: flex;
     align-items: center;
     padding: 0 1rem;
-    color: rgba(72, 72, 72, 1);
+    color: rgba(72, 72, 72, 0.8);
   }
 }
 
@@ -87,6 +90,9 @@ input[type='range']::-moz-range-thumb {
 @media screen and (max-width: 768px) {
   .time-control {
     width: 90%;
+  }
+  .volume-control {
+    width: 75%;
   }
   .play-control {
     width: 60%;

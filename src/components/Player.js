@@ -135,7 +135,7 @@ const Player = ({
         <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
       </div>
       <div className='volume-control'>
-        <div>
+        <div className='volume-down'>
           <FontAwesomeIcon size='2x' icon={faVolumeOff} />
         </div>
         <div
