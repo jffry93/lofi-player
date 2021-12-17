@@ -29,7 +29,7 @@ function lofiPlaylist() {
         'https://chillhop.com/wp-content/uploads/2021/07/4163ebb931e06d4ee8eb184295c0246d4a5055f7-300x300.jpg',
       id: uuidv4(),
       active: false,
-      color: ['#738fb8', '#ebc23e'],
+      color: ['#74366B', '#ff9278'],
       audio: 'https://mp3.chillhop.com/serve.php/?mp3=21647',
     },
     {

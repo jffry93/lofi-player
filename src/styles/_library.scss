@@ -10,14 +10,20 @@
   transform: translateX(-100%);
   transition: all 0.3s ease;
   opacity: 0;
-
-  h2 {
-    min-height: 100px;
+  .library-title {
+    position: relative;
     height: 10vh;
-    padding-left: 3rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    h2 {
+      min-height: 100px;
+      height: 10vh;
+      padding-left: 3rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  .library-songs {
+    position: relative;
   }
 }
 .library-song {
@@ -29,8 +35,8 @@
     width: 30%;
   }
   &:hover {
-    background: rgba($color: #1e1e1e, $alpha: 1);
-    transition: background 03s ease;
+    background: rgba($color: #252525, $alpha: 1);
+    transition: background 0.3s ease;
   }
 }
 .song-description {
@@ -61,6 +67,12 @@
 }
 .selected {
   background: rgba($color: #1e1e1e, $alpha: 1);
+  h2,
+  h3,
+  h4,
+  h1 {
+    color: white !important;
+  }
 }
 .active-library {
   transform: translateX(0%);

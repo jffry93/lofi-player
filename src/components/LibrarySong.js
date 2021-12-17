@@ -3,6 +3,7 @@ const LibrarySong = ({
   songs, //all songs
   setSongs,
   id, //song.id
+  currentSong,
   setCurrentSong, //song currently selected
   audioRef, //audio tag of song playing
   isPlaying, //if song is playing
@@ -36,6 +37,13 @@ const LibrarySong = ({
       onClick={songSelectHandler}
       className={`library-song ${song.active ? 'selected' : ''}`}
       //Used to highlight current song in library
+      style={{
+        background: `${
+          song.active
+            ? `linear-gradient(to left, ${currentSong.color[0]}, ${currentSong.color[1]})`
+            : ''
+        }`,
+      }}
     >
       <img alt={song.name} src={song.cover}></img>
       <div className='song-description'>

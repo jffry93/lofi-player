@@ -6,8 +6,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   button {
+    display: flex;
     background: transparent;
     border: none;
+    color: rgba(72, 72, 72, 0.9);
     cursor: pointer;
     border: 2px solid rgb(65, 65, 65);
     padding: 0.5rem;
@@ -15,6 +17,9 @@ nav {
     &:hover {
       background: rgb(65, 65, 65);
       color: white;
+    }
+    div {
+      padding: 0 0 0 2px;
     }
   }
 }

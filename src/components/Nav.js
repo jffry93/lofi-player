@@ -8,7 +8,9 @@ const Nav = ({ libraryStatus, setLibraryStatus, darkMode, setDarkMode }) => {
       <h1>Music App</h1>
       <button onClick={() => setLibraryStatus(!libraryStatus)}>
         Library
-        <FontAwesomeIcon icon={faMusic} />
+        <div>
+          <FontAwesomeIcon icon={faMusic} />
+        </div>
       </button>
     </nav>
   );

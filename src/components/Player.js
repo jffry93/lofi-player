@@ -26,8 +26,19 @@ const Player = ({
 }) => {
   useEffect(() => {
     audioRef.current.volume = volumeLvl;
-  }, []);
+  });
 
+  //Event Handlers
+  //This function is used to Play currentSong selected
+  const playSongHandler = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(!isPlaying);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(!isPlaying);
+    }
+  };
   //FUNCTION TO AVOID USING USEEFFECT
   const activeLibraryHandler = (nextPrev) => {
     const newSongs = songs.map((song) => {
@@ -44,18 +55,6 @@ const Player = ({
       }
     });
     setSongs(newSongs);
-  };
-
-  //Event Handlers
-  //This function is used to Play currentSong selected
-  const playSongHandler = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(!isPlaying);
-    } else {
-      audioRef.current.play();
-      setIsPlaying(!isPlaying);
-    }
   };
 
   //Skip and reverse to track Event Handler
@@ -78,7 +77,7 @@ const Player = ({
       }
       //If index is Not -1 then subtract 1
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
-      activeLibraryHandler(songs[songs.length - 1]);
+      activeLibraryHandler(songs[(currentIndex - 1) % songs.length]);
     }
     if (isPlaying) audioRef.current.play();
   };
@@ -137,12 +136,7 @@ const Player = ({
       </div>
       <div className='volume-control'>
         <div>
-          <FontAwesomeIcon
-            onClick={() => skipTrackHandler('skip-forward')}
-            className='skip-forward'
-            size='2x'
-            icon={faVolumeOff}
-          />
+          <FontAwesomeIcon size='2x' icon={faVolumeOff} />
         </div>
         <div
           className='track'
@@ -154,12 +148,7 @@ const Player = ({
           <div style={volumeAnim} className='animate-track'></div>
         </div>
         <div>
-          <FontAwesomeIcon
-            onClick={() => skipTrackHandler('skip-forward')}
-            className='skip-forward'
-            size='2x'
-            icon={faVolumeUp}
-          />
+          <FontAwesomeIcon size='2x' icon={faVolumeUp} />
         </div>
       </div>
       <div className='play-control'>
