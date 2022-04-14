@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/lofi-player/static/css/main.69b7290c.chunk.css",
-    "main.js": "/lofi-player/static/js/main.798240b1.chunk.js",
-    "main.js.map": "/lofi-player/static/js/main.798240b1.chunk.js.map",
+    "main.css": "/lofi-player/static/css/main.fbe8944d.chunk.css",
+    "main.js": "/lofi-player/static/js/main.1807e3ab.chunk.js",
+    "main.js.map": "/lofi-player/static/js/main.1807e3ab.chunk.js.map",
     "runtime-main.js": "/lofi-player/static/js/runtime-main.46e4869f.js",
     "runtime-main.js.map": "/lofi-player/static/js/runtime-main.46e4869f.js.map",
     "static/js/2.67e898c6.chunk.js": "/lofi-player/static/js/2.67e898c6.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.3baf3728.chunk.js": "/lofi-player/static/js/3.3baf3728.chunk.js",
     "static/js/3.3baf3728.chunk.js.map": "/lofi-player/static/js/3.3baf3728.chunk.js.map",
     "index.html": "/lofi-player/index.html",
-    "static/css/main.69b7290c.chunk.css.map": "/lofi-player/static/css/main.69b7290c.chunk.css.map",
+    "static/css/main.fbe8944d.chunk.css.map": "/lofi-player/static/css/main.fbe8944d.chunk.css.map",
     "static/js/2.67e898c6.chunk.js.LICENSE.txt": "/lofi-player/static/js/2.67e898c6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.46e4869f.js",
     "static/js/2.67e898c6.chunk.js",
-    "static/css/main.69b7290c.chunk.css",
-    "static/js/main.798240b1.chunk.js"
+    "static/css/main.fbe8944d.chunk.css",
+    "static/js/main.1807e3ab.chunk.js"
   ]
 }
