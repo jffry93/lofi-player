@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid red;
   height: calc(100% - 60px);
+  min-height: 600px;
+
+  overflow: hidden;
+  position: relative;
 }

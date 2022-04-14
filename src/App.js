@@ -63,7 +63,7 @@ function App() {
   return (
     <div
       className={`App ${libraryStatus ? 'library-active' : ''}
-    ${darkMode ? 'dark-mode-active' : ''}`}
+    `}
     >
       {/* Navbar is to the left. When library Status state becomes true it move the library to the center and goes back when false*/}
       <Nav
@@ -87,6 +87,11 @@ function App() {
           volumeLvl={volumeLvl}
           setVolumeLvl={setVolumeLvl}
         />
+        <DarkMode
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          currentSong={currentSong}
+        />
       </div>
 
       <Library
@@ -98,7 +103,7 @@ function App() {
         setSongs={setSongs}
         libraryStatus={libraryStatus}
       />
-      <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
+
       <audio
         ref={audioRef}
         src={currentSong.audio}

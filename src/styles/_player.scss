@@ -1,6 +1,5 @@
 .player {
-  border: 1px solid blue;
-
+  // border: 1px solid blue;
   width: 100%;
   max-width: 500px;
 
@@ -9,12 +8,14 @@
   align-items: center;
   justify-content: space-between;
   // gap: 8px;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
   p {
-    color: rgba(72, 72, 72, 0.8);
+    color: rgb(165, 165, 165);
   }
 }
 .time-control {
   display: flex;
+  align-items: center;
   width: 100%;
   input {
     width: 100%;
@@ -23,7 +24,8 @@
     cursor: pointer;
   }
   p {
-    padding: 1rem;
+    padding: 0 8px 0;
+    font-size: 13px;
   }
 }
 .volume-control {
@@ -38,13 +40,16 @@
     cursor: pointer;
   }
   .volume-down {
-    margin: 0 8px 0;
+    margin: 0 7px 0 7px;
   }
   div {
     display: flex;
     align-items: center;
-    padding: 0 2rem;
-    color: rgba(72, 72, 72, 0.8);
+    padding: 0 12px;
+    color: rgb(165, 165, 165);
+  }
+  svg {
+    font-size: 1.3em;
   }
 }
 
@@ -55,9 +60,17 @@
   width: 100%;
   max-width: 200px;
   padding: 1rem 0;
+  // border: 1px solid white;
   svg {
     cursor: pointer;
-    color: rgba(72, 72, 72, 1);
+    color: rgb(165, 165, 165);
+  }
+  svg:hover {
+    transform: scale(0.95);
+    color: rgb(137, 137, 137);
+  }
+  .fa-play {
+    margin-left: 7px;
   }
 }
 

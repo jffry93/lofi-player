@@ -5,7 +5,7 @@
   left: 0;
   width: 20rem;
   height: 100%;
-  background: rgba(255, 255, 255, 0.99);
+  background: rgb(222, 222, 222);
   box-shadow: 2px 2px 50px rgb(60, 60, 60);
   overflow: scroll;
   transform: translateX(-100%);
@@ -20,6 +20,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      color: rgba($color: #252525, $alpha: 0.7);
     }
   }
   .library-songs {
@@ -35,8 +36,8 @@
     width: 30%;
   }
   &:hover {
-    background: rgba($color: #252525, $alpha: 1);
-    transition: background 0.3s ease;
+    background: rgb(207, 207, 207);
+    transition: background 0.35s ease;
   }
 }
 .song-description {
@@ -53,10 +54,10 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5);
 }
-*::-webkit-scrollbar {
-  // width: 5px;
-  // height: 100%;
-}
+// *::-webkit-scrollbar {
+//   // width: 5px;
+//   // height: 100%;
+// }
 *::-webkit-scrollbar-track {
   background: transparent;
 }
