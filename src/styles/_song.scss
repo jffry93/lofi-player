@@ -1,11 +1,15 @@
 .song-container {
-  min-height: 60vh;
+  border: 1px solid green;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   img {
-    width: 40%;
+    width: 100%;
+    max-width: 400px;
+    // width: 40%;
     border-radius: 50%;
   }
   h2 {
@@ -17,9 +21,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .song-container {
-    img {
-      width: 60%;
-    }
-  }
+  // .song-container {
+  //   img {
+  //     width: 100%;
+  //     max-width: 400px;
+  //   }
+  // }
 }

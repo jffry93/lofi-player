@@ -72,20 +72,23 @@ function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
       />
-      <Song currentSong={currentSong} />
-      <Player
-        songs={songs}
-        setSongs={setSongs}
-        currentSong={currentSong}
-        setCurrentSong={setCurrentSong}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        audioRef={audioRef}
-        songInfo={songInfo}
-        setSongInfo={setSongInfo}
-        volumeLvl={volumeLvl}
-        setVolumeLvl={setVolumeLvl}
-      />
+      <div className='player-container'>
+        <Song currentSong={currentSong} />
+        <Player
+          songs={songs}
+          setSongs={setSongs}
+          currentSong={currentSong}
+          setCurrentSong={setCurrentSong}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          audioRef={audioRef}
+          songInfo={songInfo}
+          setSongInfo={setSongInfo}
+          volumeLvl={volumeLvl}
+          setVolumeLvl={setVolumeLvl}
+        />
+      </div>
+
       <Library
         audioRef={audioRef}
         songs={songs}

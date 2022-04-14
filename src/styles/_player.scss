@@ -1,16 +1,21 @@
 .player {
-  min-height: 20vh;
+  border: 1px solid blue;
+
+  width: 100%;
+  max-width: 500px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  // gap: 8px;
   p {
     color: rgba(72, 72, 72, 0.8);
   }
 }
 .time-control {
-  width: 50vw;
   display: flex;
+  width: 100%;
   input {
     width: 100%;
     -webkit-appearance: none;
@@ -23,7 +28,8 @@
 }
 .volume-control {
   display: flex;
-  width: 45vw;
+  width: 100%;
+
   justify-content: space-between;
   input {
     width: 100%;
@@ -32,12 +38,12 @@
     cursor: pointer;
   }
   .volume-down {
-    margin: 0 4px 0;
+    margin: 0 8px 0;
   }
   div {
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 2rem;
     color: rgba(72, 72, 72, 0.8);
   }
 }
@@ -46,8 +52,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  width: 30%;
+  width: 100%;
+  max-width: 200px;
+  padding: 1rem 0;
   svg {
     cursor: pointer;
     color: rgba(72, 72, 72, 1);
@@ -87,14 +94,14 @@ input[type='range']::-moz-range-thumb {
   pointer-events: none;
 }
 
-@media screen and (max-width: 768px) {
-  .time-control {
-    width: 90%;
-  }
-  .volume-control {
-    width: 75%;
-  }
-  .play-control {
-    width: 60%;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .time-control {
+//     width: 90%;
+//   }
+//   .volume-control {
+//     width: 75%;
+//   }
+//   .play-control {
+//     width: 60%;
+//   }
+// }
