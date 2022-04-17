@@ -6,16 +6,23 @@
   align-items: center;
   justify-content: center;
 
-  animation: 1s ease-out 0s 1 slideInFromBottom;
+  animation: 0.5s ease 0s 1 slideInFromBottom;
   .img-container {
     display: flex;
 
     border-radius: 12px;
     overflow: hidden;
 
-    margin: 0 22px;
+    margin: 0 44px;
 
     transition: all 0.2s ease-in;
+    img {
+      width: 100%;
+    }
+  }
+  h2,
+  h3 {
+    cursor: default;
   }
 
   h2 {

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 //COMPONENTS
 import Song from './components/Song';
 import Player from './components/Player';
@@ -12,6 +12,21 @@ import './styles/app.scss';
 import lofiPlaylist from './lofiPlaylist';
 
 function App() {
+  //New Viewport hieght
+  const adjustViewport = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    console.log(vh);
+  };
+  useEffect(() => {
+    adjustViewport();
+  }, []);
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    adjustViewport();
+  });
+
   //useRef() Hook
   const audioRef = useRef(undefined);
   //STATE

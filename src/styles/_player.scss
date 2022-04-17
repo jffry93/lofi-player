@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   // gap: 8px;
-  animation: 1s ease-out 0s 1 slideInFromBottom;
+  animation: 0.5s ease 0s 1 slideInFromBottom;
   p {
     color: rgb(165, 165, 165);
   }
@@ -26,6 +26,7 @@
   p {
     padding: 0 8px 0;
     font-size: 13px;
+    cursor: default;
   }
 }
 .volume-control {
@@ -50,6 +51,11 @@
   }
   svg {
     font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .volume-control {
+    display: none;
   }
 }
 

@@ -10,8 +10,8 @@ const DarkMode = ({ darkMode, setDarkMode, currentSong }) => {
     //Takes the value saved in local storage and makes it the state
     if (darkMode === undefined) {
       setDarkMode(localStorage.LightTheme);
-      mainContainer.classList.add('dark-mode-active');
-      mainContainer.style.backgroundImage = 'linear-gradient(#181818, #242424)';
+      // mainContainer.classList.add('dark-mode-active');
+      mainContainer.style.backgroundImage = `linear-gradient(180deg, ${currentSong.color[0]}, ${currentSong.color[1]})`;
     }
     //Set initial values based on local storage value
     if (localStorage.LightTheme === 'light-mode') {

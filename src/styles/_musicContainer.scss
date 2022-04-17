@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
 
-  height: calc(100% - 60px);
-  min-height: 600px;
+  height: calc(var(--viewport-height) - 60px);
+  min-height: calc(var(--min-height) - 60px);
 
   overflow: hidden;
   position: relative;
